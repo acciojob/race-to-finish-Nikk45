@@ -28,8 +28,13 @@ let prom5 = new Promise(resolve => {
 	},4000)
 })
 
+promises.push(prom1);
+promises.push(prom2);
+promises.push(prom3);
+promises.push(prom4);
+promises.push(prom5);
 
-Promise.any([prom1,prom2,prom3,prom4,prom5])
+Promise.any(promises)
 .then((res)=>{
 	let div = document.getElementById('output');
 	div.innerText = res;
